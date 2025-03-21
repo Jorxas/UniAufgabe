@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <title>Hausübung 3 - Webshop</title>
+
+    <script src="./build/script.js"></script>
+    <!--
+    Hier Bootstrap einbinden
+ -->
+    <style>
+      table {
+        table-layout: fixed; /* Fix column widths */
+        caption {
+          caption-side: top; /* Set captions above table */
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+
+      td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* Or use "normal" for wrapping */
+      }
+    </style>
+  </head>
+  <body>
+    <section id="preparationSection" class="mt-1 mb-2 px-2">
+      <form class="input-group d-flex justify-content-start align-items-end">
+        <div>
+          <label for="site-name">Name der Seite</label>
+          <input id="site-name" class="form-control" />
+        </div>
+        <div>
+          <label for="api-endpoint">API Endpunkt</label>
+          <input id="api-endpoint" class="form-control" />
+        </div>
+        <div>
+          <button id="submit-button" class="btn btn-success" type="submit">
+            Go!
+          </button>
+        </div>
+      </form>
+    </section>
+    <nav class="d-flex bg-info-subtle">
+      <div id="navbar_title" class="p-3"><p>******</p></div>
+      <div id="navbar_links_wrapper" class="w-100">
+        <ul id="navbar_links" class="nav justify-content-center">
+          <li class="nav-item p-3 px-5"><a href="#">###</a></li>
+          <li class="nav-item p-3 px-5"><a href="#">###</a></li>
+          <li class="nav-item p-3 px-5"><a href="#">###</a></li>
+          <li class="nav-item p-3 px-5"><a href="#">###</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main-content" class="container-fluid mt-5">
+      <section
+        id="template_section"
+        class="container-fluid d-flex justify-content-center flex-column"
+      >
+        <table id="template_table" class="table table-striped">
+          <caption class="text-start">Übersicht Ressource</caption>
+          <thead class="border-bottom mb-2">
+            <tr>
+              <th>ID</th>
+              <th>#</th>
+              <th>#</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tr>
+            <th scope="row"><span>1</span></th>
+            <td><span>Banana</span></td>
+            <td><span>0.99€</span></td>
+            <td><button class="btn btn-success">Details</button></td>
+          </tr>
+          <tr>
+            <th scope="row"><span>2</span></th>
+            <td><span>Blackberry</span></td>
+            <td><span>0.12€</span></td>
+            <td><button class="btn btn-success">Details</button></td>
+          </tr>
+          <tr>
+            <th scope="row"><span>3</span></th>
+            <td><span>Cherry</span></td>
+            <td><span>2.90€</span></td>
+            <td><button class="btn btn-success">Details</button></td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <!-- Details Modal -->
+    <div
+      class="modal fade"
+      id="detailsModal"
+      tabindex="-1"
+      aria-labelledby="detailsModal_label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              id="detailsModal_title"
+              class="modal-title fs-5"
+              id="detailsModal_label"
+            >
+              <!-- Modal Title -->
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="detailsModal_body" class="modal-body">
+            <!-- Details here -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

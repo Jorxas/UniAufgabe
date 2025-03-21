@@ -1,0 +1,1 @@
+APIURL:https://api.predic8.de/shop/v2/
